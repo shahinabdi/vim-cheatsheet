@@ -1,8 +1,12 @@
 import { useEffect } from 'react';
 
-const useKeyboardNavigation = (currentPage, prevPage, nextPage) => {
+const useKeyboardNavigation = (
+  currentPage: number, 
+  prevPage: () => void, 
+  nextPage: () => void
+): void => {
   useEffect(() => {
-    const handleKeyPress = (event) => {
+    const handleKeyPress = (event: KeyboardEvent): void => {
       switch (event.key) {
         case 'ArrowLeft':
           event.preventDefault();

@@ -1,7 +1,11 @@
-import React from 'react';
 import CommandItem from './CommandItem';
+import { SectionType } from '../types';
 
-const Section = ({ section }) => (
+interface SectionProps {
+  section: SectionType;
+}
+
+const Section = ({ section }: SectionProps) => (
   <div className="space-y-4">
     <h3 className="text-xl font-semibold text-blue-300 border-b border-gray-600 pb-2">
       {section.title}

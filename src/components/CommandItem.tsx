@@ -1,6 +1,10 @@
-import React from 'react';
+import { CommandType } from '../types';
 
-const CommandItem = ({ command }) => (
+interface CommandItemProps {
+  command: CommandType;
+}
+
+const CommandItem = ({ command }: CommandItemProps) => (
   <div className="flex items-center justify-between p-3 bg-gray-700/50 rounded-lg hover:bg-gray-700/70 transition-colors duration-200">
     <code className="bg-gray-900 text-blue-300 px-3 py-1 rounded font-mono text-sm font-semibold">
       {command.key}
