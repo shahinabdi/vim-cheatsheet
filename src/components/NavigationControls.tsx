@@ -1,7 +1,20 @@
-import React from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 
-const NavigationControls = ({ currentPage, totalPages, onPrev, onNext, onGoToPage }) => (
+interface NavigationControlsProps {
+  currentPage: number;
+  totalPages: number;
+  onPrev: () => void;
+  onNext: () => void;
+  onGoToPage: (index: number) => void;
+}
+
+const NavigationControls = ({ 
+  currentPage, 
+  totalPages, 
+  onPrev, 
+  onNext, 
+  onGoToPage 
+}: NavigationControlsProps) => (
   <div className="flex items-center justify-between mt-8">
     <button
       onClick={onPrev}
@@ -10,7 +23,7 @@ const NavigationControls = ({ currentPage, totalPages, onPrev, onNext, onGoToPag
       <ChevronLeft size={20} />
       <span>Previous</span>
     </button>
-
+    
     <div className="flex items-center gap-2">
       {Array.from({ length: totalPages }, (_, index) => (
         <button
@@ -24,7 +37,7 @@ const NavigationControls = ({ currentPage, totalPages, onPrev, onNext, onGoToPag
         />
       ))}
     </div>
-
+    
     <button
       onClick={onNext}
       className="flex items-center gap-2 px-6 py-3 bg-gray-700 hover:bg-gray-600 rounded-lg transition-colors duration-200"

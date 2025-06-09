@@ -1,6 +1,13 @@
-import React from 'react';
+import { PageType } from '../types';
 
-const NavigationTab = ({ page, index, currentPage, onClick }) => (
+interface NavigationTabProps {
+  page: PageType;
+  index: number;
+  currentPage: number;
+  onClick: (index: number) => void;
+}
+
+const NavigationTab = ({ page, index, currentPage, onClick }: NavigationTabProps) => (
   <button
     onClick={() => onClick(index)}
     className={`flex items-center gap-2 px-4 py-2 rounded-lg transition-all duration-300 ${

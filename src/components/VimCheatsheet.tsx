@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import Header from './Header';
 import NavigationTab from './NavigationTab';
 import PageContent from './PageContent';
@@ -19,7 +19,7 @@ const VimCheatsheet = () => {
     setCurrentPage((prev) => (prev - 1 + pagesData.length) % pagesData.length);
   };
 
-  const goToPage = (index) => {
+  const goToPage = (index: number) => {
     setCurrentPage(index);
   };
 

@@ -1,4 +1,3 @@
-import React from 'react';
 import VimCheatsheet from './components/VimCheatsheet';
 
 function App() {
